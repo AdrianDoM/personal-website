@@ -1,0 +1,212 @@
+:root {
+    --main-bg: hwb(326 95% 0%);
+
+    --main: hwb(240 19% 79%);
+    --main-soft: hwb(240 47% 47%);
+
+    --accent1: hwb(231 25% 0% / 1);
+    --accent2: hwb(231 40% 0% / 1);
+    --accent-soft: hwb(231 40% 0% / 1);
+
+    --min-padding: 2em;
+
+    --body-font: 'Noto Sans';
+    --display-font: 'Noto Serif';
+}
+
+html {
+    box-sizing: border-box;
+    color: var(--main);
+    background-color: var(--main-bg);
+    hyphens: auto;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: var(--body-font), sans-serif;
+    max-width: min(45em, 100% - var(--min-padding));
+    font-weight: 400;
+    min-height: 100svh;
+    margin: auto;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--display-font), serif;
+    font-weight: 900;
+    color: var(--accent1);
+}
+
+footer {
+    margin-top: auto;
+    color: var(--main-soft);
+}
+
+span.emoji {
+    font-family: 'Noto Emoji';
+}
+
+a,
+a:visited {
+    color: var(--accent-soft);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.name {
+    font-weight: 900;
+}
+
+nav>ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0;
+    padding: 0;
+    column-gap: 1.5em;
+}
+
+nav>ul>li {
+    display: block;
+}
+
+nav a,
+nav a:visited {
+    font-family: var(--display-font), serif;
+    font-weight: 700;
+    color: var(--accent2);
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: border 0.2s;
+    border-bottom: 1.5px hidden var(--accent2);
+}
+
+nav a:hover,
+nav a.nav-active {
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--accent2);
+}
+
+strong {
+    font-weight: 600;
+}
+
+.wider-child {
+    /* display: flex; */
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+}
+
+.seminar-talks {
+    --child-width: min(55em, 100vw - var(--min-padding));
+}
+
+.about-card>img {
+    --size: 12em;
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    clip-path: inset(0 round 50%);
+    margin: 1em;
+}
+
+.about-main {
+    display: grid;
+    margin-top: 1em;
+    column-gap: 1em;
+}
+
+.about-card {
+    display: grid;
+    justify-items: center;
+}
+
+.about-card ul {
+    padding: 0 1em;
+    list-style: none;
+    margin-top: 0;
+}
+
+.about-card li {
+    white-space: nowrap;
+    width: 100%;
+}
+
+.about-card a {
+    color: inherit;
+}
+
+.icon {
+    height: 0.9em;
+    fill: var(--main);
+}
+
+.scroll-table table {
+    display: table;
+    width: max(100%, 24em);
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 0.7em;
+}
+
+div.scroll-table {
+    overflow-x: scroll;
+    width: 100%;
+}
+
+td {
+    padding: 0;
+}
+
+@media screen and (min-width: 450px) {
+    :root {
+        --min-padding: 3em;
+    }
+
+    nav>ul {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 30em) {
+    div.scroll-table {
+        overflow-x: hidden;
+    }
+
+    .about-main {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg: hsl(0 0% 8%);
+
+        --main: hwb(326 95% 0%);
+        --main-soft: hwb(240 47% 47%);
+
+        --deg: 135deg;
+
+        --accent1: hwb(var(--deg) 25% 0% / 1);
+        --accent2: hwb(var(--deg) 70% 0% / 1);
+        --accent-soft: hwb(var(--deg) 70% 0% / 1);
+    }
+
+    .github-icon {
+        content: url(/assets/github-mark-white.svg);
+    }
+
+    body {
+        font-weight: 300;
+    }
+}
