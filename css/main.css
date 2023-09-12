@@ -1,12 +1,14 @@
 :root {
-    --main-bg: hwb(326 95% 0%);
+    --main-bg: hwb(0 98% 0%);
 
     --main: hwb(240 19% 79%);
     --main-soft: hwb(240 47% 47%);
 
-    --accent1: hwb(231 25% 0% / 1);
-    --accent2: hwb(231 40% 0% / 1);
+    --accent1: hwb(231 28% 5%/ 1);
+    --accent2: hwb(var(--accent2-coords) / 1);
     --accent-soft: hwb(231 40% 0% / 1);
+
+    --accent2-coords: 231 37% 0%;
 
     --min-padding: 2em;
 
@@ -64,6 +66,14 @@ a:hover {
     font-weight: 900;
 }
 
+.name>a {
+    color: inherit;
+}
+
+.name>a:hover {
+    text-decoration: none;
+}
+
 nav>ul {
     display: flex;
     flex-direction: row;
@@ -86,7 +96,7 @@ nav a:visited {
     box-sizing: border-box;
     text-decoration: none;
     transition: border 0.2s;
-    border-bottom: 1.5px hidden var(--accent2);
+    border-bottom: 1.5px solid hwb(var(--accent2-coords) / 0);
 }
 
 nav a:hover,
@@ -120,33 +130,30 @@ strong {
 
 .about-main {
     display: grid;
-    margin-top: 1em;
+    margin: 1em 0;
     column-gap: 1em;
 }
 
 .about-card {
     display: grid;
+    align-content: start;
     justify-items: center;
-}
-
-.about-card ul {
-    padding: 0 1em;
-    list-style: none;
-    margin-top: 0;
-}
-
-.about-card li {
-    white-space: nowrap;
-    width: 100%;
 }
 
 .about-card a {
     color: inherit;
 }
 
-.icon {
-    height: 0.9em;
-    fill: var(--main);
+.about-card>div {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.2em;
+    justify-content: center;
+}
+
+.about-card>div span, .about-card>div i {
+    justify-self: center;
+    align-self: center;
 }
 
 .scroll-table table {
@@ -198,12 +205,10 @@ td {
         --deg: 135deg;
 
         --accent1: hwb(var(--deg) 25% 0% / 1);
-        --accent2: hwb(var(--deg) 70% 0% / 1);
+        --accent2: hwb(var(--accent2-coords) / 1);
         --accent-soft: hwb(var(--deg) 70% 0% / 1);
-    }
 
-    .github-icon {
-        content: url(/assets/github-mark-white.svg);
+        --accent2-coords: var(--deg) 70% 0%;
     }
 
     body {
