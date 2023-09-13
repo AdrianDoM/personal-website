@@ -4,11 +4,11 @@
     --main: hwb(240 19% 79%);
     --main-soft: hwb(240 47% 47%);
 
-    --accent1: hwb(231 28% 5%/ 1);
+    --accent1: hwb(231 20% 5%/ 1);
     --accent2: hwb(var(--accent2-coords) / 1);
-    --accent-soft: hwb(231 40% 0% / 1);
+    --accent-soft: hwb(231 30% 0% / 1);
 
-    --accent2-coords: 231 37% 0%;
+    --accent2-coords: 231 30% 0%;
 
     --min-padding: 2em;
 
@@ -202,7 +202,7 @@ td {
         --main: hwb(326 95% 0%);
         --main-soft: hwb(240 47% 47%);
 
-        --deg: 135deg;
+        --deg: 138deg;
 
         --accent1: hwb(var(--deg) 25% 0% / 1);
         --accent2: hwb(var(--accent2-coords) / 1);
