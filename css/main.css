@@ -156,23 +156,30 @@ strong {
     align-self: center;
 }
 
+.scroll-table {
+    margin: 1.2em 0;
+}
+
 .scroll-table table {
     display: table;
     width: max(100%, 24em);
 }
 
 table {
-    border-collapse: separate;
-    border-spacing: 0 0.7em;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 0 0 0.8em 0;
+}
+
+table tr:last-of-type td {
+    padding: 0;
 }
 
 div.scroll-table {
     overflow-x: scroll;
     width: 100%;
-}
-
-td {
-    padding: 0;
 }
 
 @media screen and (min-width: 450px) {
