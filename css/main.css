@@ -72,12 +72,17 @@ footer {
 
 span.emoji {
     font-family: 'Noto Emoji';
+    font-style: normal;
 }
 
 a,
 a:visited {
     color: var(--accent-soft);
     text-decoration: none;
+}
+
+m {
+    font-style: italic;
 }
 
 a:hover {
@@ -138,11 +143,7 @@ strong {
 }
 
 .seminar-talks {
-    --child-width: min(55em, 100vw - var(--min-padding));
-}
-
-.seminar-talks table td:first-child {
-    white-space: nowrap;
+    --child-width: min(55em, calc(100vw - var(--min-padding)));
 }
 
 .about-card>img {
@@ -182,35 +183,71 @@ strong {
     align-self: center;
 }
 
-.scroll-table {
-    margin: 1.2em 0;
-}
-
-.scroll-table table {
-    display: table;
-    width: max(100%, 24em);
-}
-
-table {
-    border-collapse: collapse;
+.overflow-wrapper {
+    overflow-x: scroll;
 }
 
 table td {
-    /* border: 1px solid var(--main); */
-    padding: 0 1em 0.8em 0;
-}
-
-table tr:last-of-type td {
     padding: 0;
 }
 
-table tr td:last-of-type {
-    padding-right: 0;
+table td:not(:last-child) {
+    padding-right: 1em;
 }
 
-div.scroll-table {
-    overflow-x: scroll;
-    width: 100%;
+table tr:not(:last-child) td {
+    padding-bottom: 0.5em;
+}
+
+.talk-table {
+    display: grid;
+    grid-template-columns: min-content min-content 3fr;
+    gap: 0.5em 1em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.talk-table>div:nth-child(4n+1) {
+    white-space: nowrap;
+}
+.talk-table>div:nth-child(4n+3) {
+    font-style: italic;
+}
+.talk-table>div:nth-child(4n+4) {
+    grid-column: 1/span 3;
+    overflow: hidden;
+}
+
+.talk-table>div:nth-child(4n+4) p {
+    margin-top: 0;
+}
+
+.talk-table>div[data-shown="no"] {
+    height: 0;
+}
+
+.talk-table>div[data-shown="yes"] {
+    height: auto;
+}
+
+.has-see-more>label {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.has-see-more>label span {
+    display: block;
+    color: var(--accent-soft);
+    transform: rotate(90deg) scaleY(-1);
+    transition: transform 0.5s;
+}
+
+.has-see-more>label input:checked ~ span {
+    transform: rotate(180deg) scaleY(-1);
+}
+
+.has-see-more>label>input {
+    opacity: 0;
+    position: absolute;
 }
 
 .theme-toggle {
@@ -220,6 +257,7 @@ div.scroll-table {
 }
 
 .switch {
+    cursor: pointer;
     position: relative;
     display: block;
     width: var(--width);
@@ -231,7 +269,8 @@ div.scroll-table {
 }
 
 .switch input {
-    display: none;
+    opacity: 0;
+    position: absolute;
 }
 
 .switch .slider {
@@ -265,18 +304,20 @@ div.scroll-table {
     :root {
         --min-padding: 3em;
     }
-
-    nav>ul {
-        flex-direction: row;
-    }
 }
 
 @media screen and (min-width: 30em) {
-    div.scroll-table {
-        overflow-x: hidden;
-    }
-
     .about-main {
         grid-template-columns: 1fr 3fr;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .talk-table>div:nth-child(4n+4) {
+        grid-column: 3/span 1;
+    }
+
+    .talk-table {
+        grid-template-columns: auto auto auto;
     }
 }
