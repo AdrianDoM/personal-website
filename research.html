@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@700&family=Noto+Sans:wght@300;400;600&family=Noto+Serif:wght@700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@500&family=Noto+Sans+Display:wght@700&family=Noto+Sans:wght@300;400;600&family=Noto+Serif:wght@700;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
@@ -63,7 +63,19 @@
       </ul>
     </section>
   </main>
-  <footer>Last updated on 14 Sep 2023</footer>
+  <footer>
+    <div>Last updated on 20 Sep 2023</div>
+    <div class="theme-toggle">
+      <span class="emoji">☀️</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+      <span class="emoji">🌙</span>
+    </div>
+  </footer>
 </body>
+
+<script src="scripts/color-theme.js"></script>
 
 </html>
