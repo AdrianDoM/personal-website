@@ -141,6 +141,10 @@ strong {
     --child-width: min(55em, 100vw - var(--min-padding));
 }
 
+.seminar-talks table td:first-child {
+    white-space: nowrap;
+}
+
 .about-card>img {
     --size: 12em;
     width: var(--size);
