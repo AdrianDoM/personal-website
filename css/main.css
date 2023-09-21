@@ -117,21 +117,27 @@ nav>ul>li {
     display: block;
 }
 
-nav a,
-nav a:visited {
+nav a {
+    display: block;
     font-family: var(--display-font), serif;
     font-weight: 700;
     color: var(--accent2);
     box-sizing: border-box;
     text-decoration: none;
-    transition: border 0.2s;
+    transition: all 0.2s;
     border-bottom: 1.5px solid hwb(var(--accent2-coords) / 0);
+    white-space: nowrap;
+}
+
+nav a:visited {
+    color: var(--accent2);
 }
 
 nav a:hover,
 nav a.nav-active {
     text-decoration: none;
     border-bottom: 1.5px solid var(--accent2);
+    /* transform: skewX(-10deg); */
 }
 
 strong {
