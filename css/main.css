@@ -1,5 +1,7 @@
 :root {
-    --min-padding: 2em;
+    --ideal-line-width: 45rem;
+    --ideal-body-width: 55rem;
+    --body-padding: 1rem;
 
     --body-font: 'Noto Sans';
     --display-font: 'Noto Serif';
@@ -47,14 +49,28 @@ html[data-theme="dark"] {
 }
 
 body {
-    box-sizing: border-box;
     font-family: var(--body-font), sans-serif;
-    max-width: min(45em, 100% - var(--min-padding));
+    max-width: var(--ideal-body-width);
     min-height: 100svh;
     margin: auto;
-    padding-bottom: 1em;
-    display: flex;
-    flex-direction: column;
+    padding-inline: var(--body-padding);
+    display: grid;
+    grid-template-columns: auto min(var(--ideal-line-width), 100%) auto;
+    align-content: space-between;
+}
+
+body>* {
+    grid-column: 2;
+}
+
+main {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+main > * {
+    grid-column: 2;
 }
 
 h1,
@@ -66,7 +82,7 @@ h3 {
 }
 
 footer {
-    margin-top: auto;
+    margin-block: 1rem;
     display: flex;
     justify-content: space-between;
     color: var(--main-soft2);
@@ -144,14 +160,8 @@ strong {
     font-weight: 600;
 }
 
-.wider-child {
-    /* display: flex; */
-    margin-left: calc(-.5 * var(--child-width) + 50%);
-    width: var(--child-width);
-}
-
-.seminar-talks {
-    --child-width: min(55em, calc(100vw - var(--min-padding)));
+.wide {
+    grid-column: 1 / -1;
 }
 
 .about-card>img {
@@ -212,7 +222,7 @@ table tr:not(:last-child) td {
     grid-template-columns: min-content auto;
     gap: 0 1em;
     align-items: center;
-    margin-bottom: 1em;
+    margin-block: 1em;
 }
 .talk-table>div:nth-child(5n+1) {
     white-space: nowrap;
@@ -322,17 +332,14 @@ table tr:not(:last-child) td {
 
 @media screen and (min-width: 450px) {
     :root {
-        --min-padding: 3em;
+        --body-padding: 1.5rem;
     }
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 47rem) {
     .about-main {
         grid-template-columns: 1fr 3fr;
     }
-}
-
-@media screen and (min-width: 40em) {
     .talk-table>div:nth-child(5n+3) {
         grid-column: 3/span 1;
     }
@@ -345,5 +352,11 @@ table tr:not(:last-child) td {
 
     .talk-table {
         grid-template-columns: auto auto auto;
+    }
+}
+
+@media screen and (min-width: 57rem) {
+    header h1.name {
+        margin-top: 2em;
     }
 }
