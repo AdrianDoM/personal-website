@@ -15,10 +15,10 @@ html {
 }
 
 html[data-theme="light"] {
-    --main-bg: hwb(0 98% 0%);
+    --main-bg: hsl(231 50% 95%);
 
-    --main: hsl(240, 6%, 20%);
-    --main-soft1: hsl(240, 6%, 34%);
+    --main: hsl(240, 6%, 10%);
+    --main-soft1: hsl(240, 6%, 30%);
     --main-soft2: hsl(240, 6%, 65%);
 
     --accent1: hwb(231 20% 5%/ 1);
@@ -85,7 +85,7 @@ footer {
     margin-block: 1rem;
     display: flex;
     justify-content: space-between;
-    color: var(--main-soft2);
+    color: var(--main-soft1);
 }
 
 span.emoji {
@@ -318,11 +318,12 @@ table tr:not(:last-child) td {
     width: 100%;
     height: 100%;
     border-radius: calc(var(--height) / 2);
-    border: var(--border) solid var(--main-soft2);
+    border: var(--border) solid var(--main-soft1);
 }
 
 .switch .slider::before {
     content: "";
+    box-sizing: border-box;
     display: block;
     position: absolute;
     --insize: calc(var(--height) - 2 * var(--border) - 2 * var(--inset));
@@ -331,7 +332,8 @@ table tr:not(:last-child) td {
     top: calc(var(--border) + var(--inset));
     left: calc(var(--border) + var(--inset));
     border-radius: 50%;
-    background-color: var(--main-soft2);
+    /* background-color: var(--main-soft2); */
+    border: var(--border) solid var(--main-soft1);
     transition: transform 0.3s;
 }
 
