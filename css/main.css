@@ -15,7 +15,7 @@ html {
 }
 
 html[data-theme="light"] {
-    --main-bg: hsl(231 50% 95%);
+    --main-bg: hsl(231 60% 95%);
 
     --main: hsl(240, 6%, 10%);
     --main-soft1: hsl(240, 6%, 30%);

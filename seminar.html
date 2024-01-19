@@ -100,8 +100,22 @@
         </div>
         <div class="date">31 Jan</div>
         <div class="speaker">Glynn Winskel</div>
-        <div class="title"></div>
-        <div class="abstract" data-shown="no"></div>
+        <div class="title has-see-more">
+          <label>
+            <input type="checkbox">
+            <span class="emoji">🔰</span>
+          </label>
+          Making concurrency functional
+        </div>
+        <div class="abstract" data-shown="no">
+          <p>This talk bridges between two major paradigms in computation, the functional, at basis computation from input to output, and the interactive, where computation reacts to its environment while underway. Central to any compositional theory of interaction is the dichotomy between a system and its environment. Concurrent games and strategies address the dichotomy in fine detail, very locally, in a distributed fashion, through distinctions between Player moves (events of the system) and Opponent moves (those of the environment). A functional approach has to handle the dichotomy much more ingeniously, through its blunter distinction between input and output. This has led to a variety of functional approaches, specialised to particular interactive demands. Through concurrent games we can more clearly see what separates and connects the differing paradigms, and show how:</p>
+          <ul>
+            <li>to lift functions to strategies;  this helps in describing and programming strategies by functional techniques.</li>
+            <li>several paradigms of functional programming and logic arise naturally as subcategories of concurrent games, including stable domain theory; nondeterministic dataflow; geometry of interaction; the dialectica interpretation; lenses and optics; and their extensions to containers in dependent lenses and optics.</li>
+            <li>to transfer enrichments of strategies (such as to probabilistic, quantum or real-number computation) to functional cases.</li>
+          </ul>
+          <p>The talk will focus on the second and third points above. (Details can be found in the expanded version of my LICS'23 paper at <a href="https://arxiv.org/abs/2202.13910">https://arxiv.org/abs/2202.13910</a>)</p>
+        </div>
         <div class="date">7 Feb</div>
         <div class="speaker">Adrián Doña Mateo</div>
         <div class="title"></div>
@@ -127,7 +141,7 @@
         <div class="title"></div>
         <div class="abstract" data-shown="no"></div>
         <div class="date">20 Mar</div>
-        <div class="speaker">TBD</div>
+        <div class="speaker">Chris Heunen</div>
         <div class="title"></div>
         <div class="abstract" data-shown="no"></div>
         <div class="date">27 Mar</div>
@@ -319,7 +333,7 @@
     </section>
   </main>
   <footer>
-    <div>Last updated on 18 Jan 2024</div>
+    <div>Last updated on 19 Jan 2024</div>
     <div class="theme-toggle">
       <span class="emoji">☀️</span>
       <label class="switch">
