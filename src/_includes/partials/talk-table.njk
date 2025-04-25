@@ -1,0 +1,26 @@
+{# Used to display the talks given by a fixed speaker #}
+{# talkData is the provided collection of talks. #}
+{# Each talk could have: title, date, file, event, eventLink #}
+<table class="talk-table">
+    <tbody>
+    {%- for talk in talkData -%}
+        <tr>
+            <td>{{ helpers.DateFormatters.short.format(talk.date) }}</td>
+            <td>
+                {%- if talk.data.file -%}
+                <a href="{{ talk.data.file }}"><em>{{ talk.data.title }}</em></a>
+                {%- else -%}
+                <em>{{ talk.data.title }}</em>
+                {%- endif -%}    
+            </td>
+            <td>
+                {%- if talk.data.eventLink -%}
+                <a href="{{ talk.data.eventLink }}"><em>{{ talk.data.event }}</em></a>
+                {%- else -%}
+                <em>{{ talk.data.event }}</em>
+                {%- endif -%}  
+            </td>
+        </tr>
+    {%- endfor -%}
+    </tbody>
+</table>

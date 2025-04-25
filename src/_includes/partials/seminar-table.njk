@@ -1,0 +1,47 @@
+{# Used to display a seminar schedule #}
+{# seminarData is the provided collection of talks. #}
+{# Each talk could have: title, speaker, abstract (content), note #}
+{# Alternatively, it could have a 'cancelled' key, which itself can 
+   contain 'reason' and 'reasonLink' #}
+{%- set currentYear = "" -%}
+
+{%- for talk in seminarData -%}
+
+    {%- set talkYear = talk.date.getFullYear() -%}
+
+    {%- if currentYear != talkYear -%}
+    {%- set currentYear = talkYear -%}
+    <h2 class="year-header">{{ talkYear | safe }}</h3>
+    {%- endif -%}
+
+    {%- if not talk.data.cancelled -%}
+        <span class="talk-date">{{ helpers.DateFormatters.noYear.format(talk.date) }}</span>
+        <span class="talk-speaker">{{ talk.data.speaker }}</span>
+        <div class="talk-title has-see-more">
+            <span class="open-icon">►</span>
+            <input type="checkbox">
+            {{ talk.data.title }}
+            {%- if talk.data.note -%}
+            <span class="talk-note">{{ talk.data.note | safe }}</span>
+            {%- endif -%}
+        </div>
+        <div class="talk-abstract" data-shown="no">
+            {{ talk.content | safe }}
+        </div>
+    {%- else -%}
+        <span class="talk-date talk-cancelled">{{ helpers.DateFormatters.noYear.format(talk.date) }}</span>
+        <span class="talk-speaker"></span>
+        <div class="talk-title talk-cancelled">
+            {%- if talk.data.cancelled.reasonLink -%}
+            <a href="{{ talk.data.cancelled.reasonLink }}">{{ talk.data.cancelled.reason }}</a>
+            {%- elif talk.data.cancelled.reason -%}
+            {{ talk.data.cancelled.reason }}
+            {%- else -%}
+            Cancelled
+            {%- endif -%}
+        </div>
+        <div class="talk-abstract" data-shown="no"></div>
+    {%- endif -%}
+
+{%- endfor -%}
+<script src="/scripts/seminar-table.js" type="text/javascript"></script>
