@@ -11,7 +11,7 @@
 
     {%- if currentYear != talkYear -%}
     {%- set currentYear = talkYear -%}
-    <h2 class="year-header">{{ talkYear | safe }}</h3>
+    <h2 class="year-header">{{ talkYear | safe }}</h2>
     {%- endif -%}
 
     {%- if not talk.data.cancelled -%}
