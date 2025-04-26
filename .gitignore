@@ -10,3 +10,4 @@ npm-debug.*
 
 # Node modules
 node_modules
+dist
