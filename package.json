@@ -2,9 +2,10 @@
   "name": "personal-website",
   "version": "1.0.0",
   "main": ".eleventy.js",
+  "type": "commonjs",
   "scripts": {
     "start": "npx eleventy --serve",
-    "production": "NODE_ENV=production npx eleventy"
+    "production": "NODE_ENV=production npx eleventy --pathprefix=~adona --output=./prod/"
   },
   "keywords": [],
   "author": "",
