@@ -6,11 +6,11 @@ date: git Last Modified
 
 ## Publications
 
+- [*Magnitude homology equivalence of Euclidean sets*](https://arxiv.org/abs/2406.11722) with Tom Leinster (2025), to appear in [AGT](https://msp.org/agt/about/journal/about.html)
 - [*Encoding Dependently-Typed Constructions into Simple Type Theory*](https://dl.acm.org/doi/abs/10.1145/3573105.3575679) with Anthony Bordg (2023)
 
 ## Preprints
 - [*Pushforward monads*](https://arxiv.org/abs/2406.15256)
-- [*Magnitude homology equivalence of Euclidean sets*](https://arxiv.org/abs/2406.11722) with Tom Leinster
 
 ## Talks
 {% set talkData = collections.talks %}

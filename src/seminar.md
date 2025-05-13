@@ -9,4 +9,4 @@ The seminar is intended to be an informal environment where people interested in
 
 This is one of several seminars run within the Hodge Institute at Edinburgh. The details of these can be found on the [Hodge seminars website](https://sites.google.com/view/hodge-seminars/).
 
-For more details, or to propose a talk, please email [Adrián](https://webhomes.maths.ed.ac.uk/~adona/) or [Tom](https://webhomes.maths.ed.ac.uk/~tl/). The old website for the Edinburgh category theory seminar can be found here.
+For more details, or to propose a talk, please email [Adrián](https://webhomes.maths.ed.ac.uk/~adona/) or [Tom](https://webhomes.maths.ed.ac.uk/~tl/). The old website for the Edinburgh category theory seminar can be found [here](https://webhomes.maths.ed.ac.uk/~emilyroff/late_lunch.html).
