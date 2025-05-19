@@ -30,20 +30,17 @@
             {%- endif -%}
         </div>
         {%- else -%}
-        <div class="talk-title has-see-more">
-            <span class="open-icon"><i class="fa-solid fa-angles-right"></i></span>
-            <input type="checkbox">
-            {{ talk.data.title }}
+        <details class="talk-title has-see-more">
+            <summary>{{ talk.data.title }}
             {%- if talk.data.note -%}
             <span class="talk-note">{{ talk.data.note | safe }}</span>
             {%- endif -%}
-        </div>
+            </summary>
+            {#- Abstract -#}
+            {{ talk.content | safe }}
+        </details>
         {%- endif -%}
 
-        {#- Abstract -#}
-        <div class="talk-abstract" data-shown="no">
-            {{ talk.content | safe }}
-        </div>
     {%- else -%}
         <span class="talk-date talk-cancelled">{{ helpers.DateFormatters.noYear.format(talk.date) }}</span>
         <span class="talk-speaker"></span>
@@ -56,7 +53,6 @@
             Cancelled
             {%- endif -%}
         </div>
-        <div class="talk-abstract" data-shown="no"></div>
     {%- endif -%}
 
 {%- endfor -%}
