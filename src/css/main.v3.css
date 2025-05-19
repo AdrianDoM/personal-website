@@ -5,6 +5,8 @@
 
     --body-font: 'Noto Sans';
     --display-font: 'Noto Serif';
+
+    interpolate-size: allow-keywords;
 }
 
 html {
@@ -259,11 +261,50 @@ table tr:not(:last-child) td {
 
     & > .talk-title {
         grid-column: 1/span 2;
-        font-style: italic;
 
-        &:has(> input:focus-visible) {
-            outline-offset: 1px;
-            outline: auto black 1px;
+        & > summary {
+            font-style: italic;
+            cursor: pointer;
+            list-style-position: inside;
+
+            &::marker {
+                content: none;
+            }
+
+            &::before {
+                font-family: FontAwesome;
+                font-style: normal;
+                content: '\f101';
+                color: var(--accent2);
+                margin-right: 0.5ex;
+                display: inline-block;
+                transition: rotate 0.5s;
+            }
+        }
+
+        & > p {
+            margin-block: 1ex;
+        }
+
+        &::details-content {
+            color: var(--main-soft1);
+            overflow: hidden;
+            block-size: 0;
+
+            transition: 
+                block-size 0.5s,
+                content-visibility 0.5s;
+            transition-behavior: allow-discrete;
+        }
+
+        &[open] {
+            & > summary::before {
+                rotate: 90deg;
+            }
+
+            &::details-content {
+                block-size: auto;
+            }
         }
     }
 
@@ -276,58 +317,6 @@ table tr:not(:last-child) td {
     & .talk-cancelled {
         font-style: normal;
         color: var(--main-soft1);
-    }
-
-    & > .talk-abstract {
-        grid-column: 1/span 2;
-        color: var(--main-soft1);
-        overflow: hidden;
-        transition: opacity 0.5s, transform 0.5s;
-
-        & p {
-            margin-block: 1ex;
-        }
-
-        &[data-shown="no"] {
-            height: 0;
-            opacity: 0;
-            transform: translateY(-1em);
-        }
-
-        &[data-shown="yes"] {
-            height: auto;
-            opacity: 1;
-            transform: translateY(0em);
-        }
-
-    }
-}
-
-.has-see-more {
-    cursor: pointer;
-    position: relative;
-    /* display: inline-block; */
-
-    & > .open-icon {
-        display: inline-block;
-        color: var(--accent-soft);
-        transition: transform 0.5s;
-        transform-origin: center;
-
-        &:has(~ input:checked) {
-            transform: rotate(90deg);
-        }
-    }
-
-    & > input {
-        cursor: pointer;
-        opacity: 0;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
     }
 }
 
@@ -371,20 +360,17 @@ table tr:not(:last-child) td {
         grid-template-columns: 1fr 3fr;
     }
     .seminar-table {
-        grid-template-columns: auto auto auto;
-        gap: 0.75em 1em;
-        align-items: center;
+        grid-template-columns: max-content max-content auto;
+        align-items: start;
+        gap: 1.5em 1em;
 
         & > .talk-title {
             grid-column: 3/span 1;
         }
 
-        & > .talk-abstract {
-            grid-column: 3/span 1;
-        }
-
         & > .year-header {
             grid-column: 1/span 3;
+            margin-bottom: 0;
         }
         & > .talk-date {
             margin-top: 0;
