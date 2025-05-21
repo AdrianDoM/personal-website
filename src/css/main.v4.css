@@ -18,7 +18,7 @@ html {
 
 html[data-theme="light"] {
     --main-bg: hsl(231 60% 95%);
-    --main-bg-soft: hsl(231, 60%, 70%);
+    --main-bg-soft: hsl(231, 60%, 85%);
 
     --main: hsl(240, 6%, 10%);
     --main-soft1: hsl(240, 6%, 30%);
@@ -236,9 +236,10 @@ table tr:not(:last-child) td {
 .seminar-table {
     display: grid;
     grid-template-columns: min-content 1fr;
-    gap: 0 1em;
+    gap: 0;
     align-items: end;
-    /* margin-block: 1em; */
+
+    --border-radius: 8px;
 
     & > .year-header {
         grid-column: 1/span 2;
@@ -247,20 +248,43 @@ table tr:not(:last-child) td {
     }
 
     & > .talk-date {
-        margin-top: 1.5em;
         white-space: nowrap;
 
-        .year-header + & {
-            margin-top: 0;
-        }
+        /* Small screen first */
+        border: solid 2px var(--main-bg-soft);
+        background: var(--main-bg-soft);
+        padding: 4px;
+        height: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        border-top-left-radius: var(--border-radius);
 
         &.talk-cancelled {
             text-decoration: line-through;
         }
     }
 
+    & > .talk-speaker {
+        border: solid 2px var(--main-bg-soft);
+        border-left: none;
+        padding-block: 4px;
+        padding-inline: 8px;
+        box-sizing: border-box;
+        height: 100%;
+        border-top-right-radius: var(--border-radius);
+    }
+
     & > .talk-title {
         grid-column: 1/span 2;
+        
+        padding: 0.5ch;
+        box-sizing: border-box;
+        border: solid 2px var(--main-bg-soft);
+        border-top: none;
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        
+        margin-bottom: 1em;
 
         & > summary {
             font-style: italic;
@@ -366,14 +390,27 @@ table tr:not(:last-child) td {
 
         & > .talk-title {
             grid-column: 3/span 1;
+            border: none;
+            padding: 0;
+            margin-bottom: 0;
         }
 
         & > .year-header {
             grid-column: 1/span 3;
             margin-bottom: 0;
         }
+
         & > .talk-date {
             margin-top: 0;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 0;
+        }
+
+        & > .talk-speaker {
+            border: none;
+            padding: 0;
         }
     }
 }
