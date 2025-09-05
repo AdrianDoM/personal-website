@@ -10,10 +10,9 @@ intro:
 ---
 I am a third year PhD student at the University of Edinburgh, supervised by [Tom Leinster](https://webhomes.maths.ed.ac.uk/~tl/). I am interested in category theory and its interactions with other areas of mathematics.
 
-I am currently working on codensity monads and the related concept of pushforward monads. In the past I have thought about magnitude homology, which is a homology theory for enriched categories, and in particular for metric spaces.
+The work I have done so far can be organised into three groups: monad theory, especially codensity and pushforward monads; enriched category theory (Cauchy dense functors); and magnitude homology, which is a homology theory for enriched categories, and in particular for metric spaces.
 
 #### News!
+- Preprint on [*Cauchy density*](https://arxiv.org/abs/2507.07869)
+- [Slides](/files/CT25_slides.pdf) for my CT2025 speed talk
 - Updated preprint on [*Pushforward monads*](https://arxiv.org/abs/2406.15256)
-- [Slides](./files/Catnip_slides.pdf)
-- [Slides](./files/CT24_slides.pdf) for my CT2024 talk
-- Preprint on [*Magnitude homology equivalence of Euclidean sets*](https://arxiv.org/abs/2406.11722) with Tom Leinster

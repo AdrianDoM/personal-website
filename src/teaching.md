@@ -4,6 +4,9 @@ layout: 'layouts/raw.njk'
 date: git Last Modified
 ---
 
+### Summer 2025
+- Tutor for the [Count Me In programme](https://www.agq-cdt.org/count-me-in/)
+
 ### Spring 2025
 - Tutor for Proofs and Problem Solving
 

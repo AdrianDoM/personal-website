@@ -10,7 +10,9 @@ date: git Last Modified
 - [*Encoding Dependently-Typed Constructions into Simple Type Theory*](https://dl.acm.org/doi/abs/10.1145/3573105.3575679) with Anthony Bordg (2023)
 
 ## Preprints
-- [*Pushforward monads*](https://arxiv.org/abs/2406.15256)
+
+- [*Cauchy density*](https://arxiv.org/abs/2507.07869) (2025)
+- [*Pushforward monads*](https://arxiv.org/abs/2406.15256) (2025)
 
 ## Talks
 {% set talkData = collections.talks %}
