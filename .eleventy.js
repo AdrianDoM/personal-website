@@ -15,9 +15,20 @@ module.exports = async function (config) {
         return sortByReverseDate(collection.getFilteredByGlob('./src/talks/*.md'));
     });
 
-    // Talks for the seminar, sorted in reverse chronological order
-    config.addCollection('seminarTalks', (collection) => {
-        return sortByReverseDate(collection.getFilteredByGlob('./src/seminar-talks/*.md'));
+    // Past talks for the seminar, sorted in reverse chronological order
+    config.addCollection('pastSeminarTalks', (collection) => {
+        const today = new Date();
+        return collection.getFilteredByGlob('./src/seminar-talks/*.md').filter((talk) => {
+            return talk.date < today;
+        }).sort().reverse();
+    });
+
+    // Upcoming talks for the seminar, sorted in chronological order
+    config.addCollection('upcomingSeminarTalks', (collection) => {
+        const today = new Date();
+        return collection.getFilteredByGlob('./src/seminar-talks/*.md').filter((talk) => {
+            return talk.date >= today;
+        }).sort();
     });
 
 	return {

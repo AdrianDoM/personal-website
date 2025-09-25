@@ -1,7 +1,7 @@
 ---
 title: 'Edinburgh category theory seminar'
 layout: 'layouts/seminar.njk'
-date: git Last Modified
+date: 2025-09-25
 ---
 The Edinburgh category theory seminar runs on most termtime **Wednesdays from 12:05 to 13:00** in the **Bayes Centre, Room 5.46**. Most talks will also be livestreamed via Zoom. Please note that we won't be meeting on strike days.
 

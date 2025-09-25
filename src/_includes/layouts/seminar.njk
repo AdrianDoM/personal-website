@@ -19,7 +19,16 @@
 			</section>
 
 			<article class="[ seminar-table ] [ wide ]">
-			{%- set seminarData = collections.seminarTalks -%}
+
+			{%- if collections.upcomingSeminarTalks -%}
+				<h2 class="year-header">Upcoming</h2>
+				{%- for talk in collections.upcomingSeminarTalks -%}
+					{%- set talk = talk -%}
+					{%- include "partials/seminar-talk.njk" -%}
+				{%- endfor -%}
+			{%- endif -%}
+
+			{%- set seminarData = collections.pastSeminarTalks -%}
 			{%- include "partials/seminar-table.njk" -%}
 			</article>
         </main>
