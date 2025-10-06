@@ -15,4 +15,3 @@ The work I have done so far can be organised into three groups: monad theory, es
 #### News!
 - Preprint on [*Cauchy density*](https://arxiv.org/abs/2507.07869)
 - [Slides](/files/CT25_slides.pdf) for my CT2025 speed talk
-- Updated preprint on [*Pushforward monads*](https://arxiv.org/abs/2406.15256)

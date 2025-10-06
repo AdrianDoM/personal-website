@@ -3,6 +3,8 @@ title: 'Teaching'
 layout: 'layouts/raw.njk'
 date: git Last Modified
 ---
+### Autumn 2025
+- Tutor for Introduction to Mathematics at University
 
 ### Summer 2025
 - Tutor for the [Count Me In programme](https://www.agq-cdt.org/count-me-in/)
@@ -34,4 +36,4 @@ date: git Last Modified
 - Tutor for Introduction to Algorithms and Data Structures
 
 ## Awards and nominations
-- Nominee as [Student Tutor of the Year](https://www.eusa.ed.ac.uk/whatson/awards/roll-of-honour-2023) in Edinburgh's student-led teaching awards
+- Nominee for [Student Tutor of the Year](https://www.eusa.ed.ac.uk/whatson/awards/roll-of-honour-2023) in Edinburgh's student-led teaching awards
