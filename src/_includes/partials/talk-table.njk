@@ -15,9 +15,9 @@
             </td>
             <td>
                 {%- if talk.data.eventLink -%}
-                <a href="{{ talk.data.eventLink }}"><em>{{ talk.data.event }}</em></a>
+                <a href="{{ talk.data.eventLink }}">{{ talk.data.event }}</a>
                 {%- else -%}
-                <em>{{ talk.data.event }}</em>
+                {{ talk.data.event }}
                 {%- endif -%}  
             </td>
         </tr>
