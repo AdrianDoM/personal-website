@@ -1,10 +1,9 @@
 ---
-title: 'Biprops and symmetric weak multicategories'
+title: 'Symmetric weak multicategories'
 speaker: 'Volodymyr Lyubashenko'
 ---
-I shall discuss structures which arise in the definition of biprops – weakly category enriched
-coloured props. In particular, the set of operations \\((X_i)\_{i \in I} \to (Y_j)\_{j \in J}\\) (\\(X_i\\) and \\(Y_j\\) are colours)
-is a category, and the composition of operations is a functor. We relate the notion of a biprop
-with the notion of a weak \\(\mathbf{Cat}\\)-enriched symmetric multicategory. Namely, for a given weak
-\\(\mathbf{Cat}\\)-enriched symmetric multicategory we construct a biprop so that to a multifunctor of such
-multicategories there corresponds a morphism of biprops.
+As a guiding principle, a multicategory is what remains of a monoidal category when
+monoidal product is not available. A weak multicategory means that hom-sets are in fact
+categories, and in place of usual equations, there are natural isomorphisms, which have to satisfy their own equations. In particular, the set of operations \\((X_i)\_{i \in I} \to Y\\) is a category, and
+the compositions of operations are functors. We discuss the weak action of a symmetric group
+on the collection of homomorphism categories of a symmetric weak multicategory.
