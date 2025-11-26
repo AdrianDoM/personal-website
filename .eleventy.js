@@ -17,17 +17,19 @@ module.exports = async function (config) {
 
     // Past talks for the seminar, sorted in reverse chronological order
     config.addCollection('pastSeminarTalks', (collection) => {
-        const today = new Date();
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
         return collection.getFilteredByGlob('./src/seminar-talks/*.md').filter((talk) => {
-            return talk.date < today;
+            return talk.date < yesterday;
         }).sort().reverse();
     });
 
     // Upcoming talks for the seminar, sorted in chronological order
     config.addCollection('upcomingSeminarTalks', (collection) => {
-        const today = new Date();
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
         return collection.getFilteredByGlob('./src/seminar-talks/*.md').filter((talk) => {
-            return talk.date >= today;
+            return talk.date >= yesterday;
         }).sort();
     });
 
