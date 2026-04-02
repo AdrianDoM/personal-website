@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"text": "About",
+			"url": "/"
+		},
+		{
+			"text": "Research",
+			"url": "/research/"
+		},
+		{
+			"text": "Teaching",
+			"url": "/teaching/"
+		},
+		{
+			"text": "Category theory seminar",
+			"url": "/seminar/"
+		}
+	]
+}

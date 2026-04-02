@@ -1,0 +1,20 @@
+{# Used to display a seminar schedule #}
+{# seminarData is the provided collection of talks. #}
+{# Each talk could have: title, speaker, abstract (content), note #}
+{# Alternatively, it could have a 'cancelled' key, which itself can 
+   contain 'reason' and 'reasonLink' #}
+{%- set currentYear = "" -%}
+
+{%- for talk in seminarData -%}
+
+    {%- set talkYear = talk.date.getFullYear() -%}
+
+    {%- if currentYear != talkYear -%}
+    {%- set currentYear = talkYear -%}
+    <h2 class="year-header">{{ talkYear | safe }}</h2>
+    {%- endif -%}
+
+    {%- set talk = talk -%}
+    {%- include "partials/seminar-talk.njk" -%}
+
+{%- endfor -%}

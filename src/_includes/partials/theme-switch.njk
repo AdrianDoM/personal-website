@@ -1,0 +1,6 @@
+<script src="/scripts/theme-switch.js" type="text/javascript"></script>
+<div class="theme-switch">
+    <button class="light-switch" onclick="switchTheme('light');"><i class="fa-solid fa-sun"></i></button>
+    <button class="dark-switch" onclick="switchTheme('dark');"><i class="fa-solid fa-moon"></i></button>
+</div>
+<script>switchTheme(localStorage.getItem("theme"));</script>

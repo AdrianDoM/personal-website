@@ -1,0 +1,45 @@
+{# Used to render information about a single seminar talk #}
+{# `talk` is the provided talk #}
+{# A talk could have: title, speaker, abstract (content), note #}
+{# Alternatively, it could have a 'cancelled' key, which itself can 
+   contain 'reason' and 'reasonLink' #}
+{%- if not talk.data.cancelled -%}
+    {#- Date -#}
+    <span class="talk-date">{{ helpers.DateFormatters.noYear.format(talk.date) }}</span>
+
+    {#- Speaker -#}
+    <span class="talk-speaker">{{ talk.data.speaker }}</span>
+
+    {#- Title -#}
+    {%- if talk.data.title == 'TBA' -%}
+    <div class="talk-title font-normal">
+        {{ talk.data.title }}
+        {%- if talk.data.note -%}
+        <span class="talk-note">{{ talk.data.note | safe }}</span>
+        {%- endif -%}
+    </div>
+    {%- else -%}
+    <details class="talk-title has-see-more">
+        <summary>{{ talk.data.title }}
+        {%- if talk.data.note -%}
+        <span class="talk-note">{{ talk.data.note | safe }}</span>
+        {%- endif -%}
+        </summary>
+        {#- Abstract -#}
+        {{ talk.content | safe }}
+    </details>
+    {%- endif -%}
+
+{%- else -%}
+    <span class="talk-date talk-cancelled">{{ helpers.DateFormatters.noYear.format(talk.date) }}</span>
+    <span class="talk-speaker"></span>
+    <div class="talk-title talk-cancelled">
+        {%- if talk.data.cancelled.reasonLink -%}
+        <a href="{{ talk.data.cancelled.reasonLink }}">{{ talk.data.cancelled.reason }}</a>
+        {%- elif talk.data.cancelled.reason -%}
+        {{ talk.data.cancelled.reason }}
+        {%- else -%}
+        Cancelled
+        {%- endif -%}
+    </div>
+{%- endif -%}
