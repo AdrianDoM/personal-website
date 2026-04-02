@@ -2,7 +2,7 @@ const sortByReverseDate = require('./src/utils/sort-by-reverse-date.js');
 
 module.exports = async function (config) {
     const { HtmlBasePlugin } = await import("@11ty/eleventy");
-	config.addPlugin(HtmlBasePlugin);
+    config.addPlugin(HtmlBasePlugin);
 
     // Set directories to pass through to the dist folder
     config.addPassthroughCopy('./src/images/');
