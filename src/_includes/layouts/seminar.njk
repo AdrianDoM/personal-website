@@ -21,7 +21,7 @@
 
 			<article class="[ seminar-table ] [ wide ]">
 
-			{%- if collections.upcomingSeminarTalks -%}
+			{%- if collections.upcomingSeminarTalks.length -%}
 				<h2 class="year-header">Upcoming</h2>
 				{%- for talk in collections.upcomingSeminarTalks -%}
 					{%- set talk = talk -%}
