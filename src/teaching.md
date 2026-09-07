@@ -3,6 +3,10 @@ title: 'Teaching'
 layout: 'layouts/raw.njk'
 date: git Last Modified
 ---
+### Spring 2026
+- Tutor for Introduction to Mathematical Analysis
+- Tutor for Fundamentals of Pure Mathematics
+
 ### Autumn 2025
 - Tutor for Introduction to Mathematics at University
 
