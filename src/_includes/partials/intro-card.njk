@@ -4,10 +4,10 @@
         alt="{{ introData.imageAlt }}"
     >
     <div class="grid-bullet-list">
-        <span class="emoji bullet">✉</span>
+        <i style="--svg: url('/images/envelope.svg');"></i>
         <a href="mailto:{{ introData.email }}">{{ introData.email }}</a>
 
-        <i class="fa-brands fa-github bullet" aria-hidden="true"></i>
+        <i style="--svg: url('/images/github.svg');"></i>
         <a href="https://github.com/{{ introData.github }}">{{ introData.github }}</a>
     </div>
 </div>

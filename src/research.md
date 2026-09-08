@@ -4,6 +4,8 @@ layout: 'layouts/raw.njk'
 date: git Last Modified
 ---
 
+My research is about ...
+
 ## Publications
 
 - [*Pushforward monads*](http://www.tac.mta.ca/tac/volumes/44/30/44-30abs.html), Theory and Applications of Categories, Vol. 44, No. 30 (2025)
