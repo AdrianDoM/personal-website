@@ -1,44 +1,74 @@
 ---
 title: 'Teaching'
 layout: 'layouts/raw.njk'
-date: git Last Modified
+date: Last Modified
 ---
-1234567901234567890123456789012345678901234567890123456789012345678901234567890
-### Spring 2026
-- Tutor for Introduction to Mathematical Analysis
-- Tutor for Fundamentals of Pure Mathematics
 
-### Autumn 2025
-- Tutor for Introduction to Mathematics at University
+<article>
 
-### Summer 2025
-- Tutor for the [Count Me In programme](https://www.agq-cdt.org/count-me-in/)
+## Awards and honours
 
-### Spring 2025
-- Tutor for Proofs and Problem Solving
+<table class="tutoring-table">
+<tbody>
+<tr>
+    <td><a href="https://advance-he.ac.uk/fellowship/associate-fellowship/">Associate Fellow of the Higher Education Academy</a> </td>
+    <td>2025</td>
+</tr>
+<tr>
+    <td>Nominee for <a href="https://www.eusa.ed.ac.uk/whatson/awards/roll-of-honour-2023">Student Tutor of the Year</a></td>
+    <td>2023</td>
+</tr>
+</tbody>
+</table>
 
-### Autumn 2024
-- Tutor for Advanced Mathematical Economics
-- Tutor for Axiomatic Set Theory
-- Tutor for Group Theory
+</article>
+<article>
 
-### Spring 2024
-- Co-organiser and tutor for an [GlaMS course on the Lean theorem prover](https://glams-lean-2024.github.io/)
-- Tutor for Fundamentals of Pure Mathematics
-- Tutor for Introduction to Number Theory
+## Other teaching
 
-### Autumn 2023
-- Tutor for Category Theory
-- Tutor for Combinatorics and Graph Theory
-- Tutor for Accelerated Proofs and Problem Solving
+<table class="tutoring-table">
+<tbody>
+<tr>
+    <td>Tutor and mentor for the <a href="https://www.agq-cdt.org/count-me-in/">Count Me In programme</a> </td>
+    <td>2025 Summer</td>
+</tr>
+<tr>
+    <td>Co-organiser and tutor of <a href="https://glams-lean-2024.github.io/">GlaMS course on Lean</a></td>
+    <td>2023-24 Sem 2</td>
+</tr>
+<tr>
+    <td>Co-organiser and tutor of an introductory course on Lean</td>
+    <td>2022-23 Sem 2</td>
+</tr>
+</tbody>
+</table>
 
-### Spring 2023
-- Co-organiser and tutor for an [introductory course on the theorem prover Lean](https://www.maths.ed.ac.uk/~pkinnear/leancourse/)
-- Tutor for Fundamentals of Pure Mathematics
-- Tutor for Calculus and its Applications
+</article>
 
-### Autumn 2020/Spring 2021
-- Tutor for Introduction to Algorithms and Data Structures
+<article>
 
-## Awards and nominations
-- Nominee for [Student Tutor of the Year](https://www.eusa.ed.ac.uk/whatson/awards/roll-of-honour-2023) in Edinburgh's student-led teaching awards
+<h2>Tutoring</h2>
+<p>I have tutored the following courses at the <strong>University of Edinburgh</strong>.</p>
+
+<table class="tutoring-table">
+<thead>
+	<tr>
+		<th>Course name</th>
+		<th>Dates taught</th>
+	</tr>
+</thead>
+<tbody>
+	{%- for course in tutoredCourses -%}
+	<tr>
+		<td>{{ course.name }}</td>
+		<td>
+			{%- for year in course.years -%}
+			<p>{{ year }}</p>
+			{%- endfor -%}
+		</td>
+	<tr>
+	{%- endfor -%}
+</tbody>
+</table>
+
+</article>

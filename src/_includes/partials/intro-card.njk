@@ -1,13 +1,17 @@
 <div class="about-card">
-    <img 
-        src="{{ introData.image }}"
-        alt="{{ introData.imageAlt }}"
-    >
-    <div class="grid-bullet-list">
-        <i style="--svg: url('/images/envelope.svg');"></i>
-        <a href="mailto:{{ introData.email }}">{{ introData.email }}</a>
+	<img 
+		src="{{ introData.image }}"
+		alt="{{ introData.imageAlt }}"
+	>
+	<div class="grid-bullet-list">
+		<span>
+			<svg class="icon"><use href="/images/sprite.svg#envelope" /></svg>
+			<span class="email">Ad<span>vert</span>rian.Do<span>omsday</span>na@prot<span>einshake</span>on.me</span>
+		</span>
 
-        <i style="--svg: url('/images/github.svg');"></i>
-        <a href="https://github.com/{{ introData.github }}">{{ introData.github }}</a>
-    </div>
+		<a href="https://github.com/{{ introData.github }}">
+			<svg class="icon"><use href="/images/sprite.svg#github" /></svg>
+			{{ introData.github }}
+		</a>
+	</div>
 </div>

@@ -1,4 +1,7 @@
 <footer>
-    <span class="timestamp">Last updated on {{ helpers.DateFormatters.year.format(page.date) }}</span>
-    {% include "partials/theme-switch.njk" %}
-  </footer>
+	<span class="timestamp">Last updated on {{ page.date | formatDate("year") }}</span>
+	<a href="#top" class="tag"><svg class="icon" style="rotate: 180deg;"><use href="/images/sprite.svg#down-button" /></svg>Back to top</a>
+	{#
+	{% include "partials/theme-switch.njk" %}
+	#}
+</footer>

@@ -1,28 +1,32 @@
 ---
 title: 'Research'
 layout: 'layouts/raw.njk'
-date: git Last Modified
+date: Last Modified
 ---
+<article>
 
-My research is about ...
+I am interested in category theory as a tool for clarifying relationships across mathematics and its applications. Much of my work has focused on monads, a fundamental categorical concept with many uses, including categorical universal algebra. In particular, I've studied codensity and pushforward monads, which generate new monads from functors and other monads.
 
-## Publications
+I've also spent time thinking about enriched categories, which provide a setting
+able to encompass on the same footing differential graded categories and metric
+spaces. This has led to my interest in the concept of Cauchy dense functor, about which I have written a short article.
 
-- [*Pushforward monads*](http://www.tac.mta.ca/tac/volumes/44/30/44-30abs.html), Theory and Applications of Categories, Vol. 44, No. 30 (2025)
-- [*Magnitude homology equivalence of Euclidean sets*](https://arxiv.org/abs/2406.11722) with Tom Leinster (2025), to appear in [AGT](https://msp.org/agt/about/journal/about.html)
-- [*Encoding Dependently-Typed Constructions into Simple Type Theory*](https://dl.acm.org/doi/abs/10.1145/3573105.3575679) with Anthony Bordg (2023)
+Before that, I researched magnitude homology, a homology theory for enriched categories, and hence also metric spaces. I studied when two closed subsets of Euclidean space are magnitude homology equivalent, in the sense of having back-and-forth distance-decreasing maps between them inducing isomorphisms in magnitude homology. This turns out to be characterised up to isometry by an important subset, called the core.
 
-## Preprints
+</article>
 
-- [*Cauchy density*](https://arxiv.org/abs/2507.07869) (2025)
+{% from "partials/components.njk" import articleCard %}
 
-## Talks
-{% set talkData = collections.talks %}
-<div class="scroll-x">
-{% include 'partials/talk-table.njk' %}
-</div>
+<article class="publications-list">
+<h2>Finished work</h2>
+{%- for article in collections.publications -%}
+	{{ articleCard(article, 'publications') }}
+{%- endfor -%}
+</article>
 
-## Notes
-- [*Persistent homology*](/files/persistent_homology_glams.pdf) - GlaMS group project with [Malthe Sporring](https://malthefogsporring.github.io/) and [Yan Yau Cheng](https://yanyauc.com/)
-- [*Soergel bimodules and HOMFLY-PT homology*](/files/part-iii-essay.pdf) - Part III essay
-- [*Exploring the capabilities of the Lean interactive theorem prover*](/file/honours_project.pdf) - Honours project for BSc Computer Science and Mathematics
+<article class="other-writing-list">
+<h2>Other writing</h2>
+{%- for article in collections.otherWriting -%}
+	{{ articleCard(article, 'otherWriting') }}
+{%- endfor -%}
+</article>

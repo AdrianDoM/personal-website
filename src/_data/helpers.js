@@ -1,24 +1,4 @@
-/**
- * Two Intl.DateTimeFormat objects used for formatting dates
- */
-const DateFormatters = {
-	year: new Intl.DateTimeFormat("en-GB", {
-		year: "numeric",
-		day: "numeric",
-		month: "short"
-	}),
-	noYear: new Intl.DateTimeFormat("en-GB", {
-		day: "numeric",
-		month: "short"
-	}),
-	short: new Intl.DateTimeFormat("en-GB", {
-		day: "numeric",
-		month: "numeric",
-		year: "2-digit"
-	})
-}
-
-module.exports = { DateFormatters,
+module.exports = {
 	/**
 	 * Returns back some attributes based on whether the
 	 * link is active or a parent of an active item
@@ -34,7 +14,10 @@ module.exports = { DateFormatters,
 			response = ' aria-current="page"';
 		}
 
-		if (itemUrl.length > 1 && pageUrl.indexOf(itemUrl) === 0) {
+		if (
+			itemUrl.length > 1 && pageUrl.indexOf(itemUrl) === 0 ||
+			itemUrl === pageUrl
+		) {
 			response += ' data-state="active"';
 		}
 

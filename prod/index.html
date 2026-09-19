@@ -9,14 +9,12 @@
 		
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@500&family=Noto+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
 
 <link rel="stylesheet" href="/~adona/css/reset.css">
-<link rel="stylesheet" href="/~adona/css/main.v4.css">
+<link rel="stylesheet" href="/~adona/css/main.v5.css">
 
-
-<script src="https://kit.fontawesome.com/ac7cdbb5bb.js" crossorigin="anonymous"></script>
 
 		<script type="application/ld+json">
 			{
@@ -38,7 +36,7 @@
 			}
   		</script>
 	</head>
-	<body>
+	<body id="top">
 		<header role="banner" class="site-head">
 	<h1 class="site-head__title"><a href="/~adona/" aria-label="Adrián Doña Mateo - home">
 		Adrián Doña Mateo
@@ -47,7 +45,7 @@
 		<ul>
 			
 			<li>
-				<a href="/~adona/" aria-current="page">About</a>
+				<a href="/~adona/" aria-current="page" data-state="active">About</a>
 			</li>
 			
 			<li>
@@ -55,11 +53,15 @@
 			</li>
 			
 			<li>
+				<a href="/~adona/talks/">Talks</a>
+			</li>
+			
+			<li>
 				<a href="/~adona/teaching/">Teaching</a>
 			</li>
 			
 			<li>
-				<a href="/~adona/seminar/">Category theory seminar</a>
+				<a href="/~adona/misc/">Misc</a>
 			</li>
 			
 		</ul>
@@ -69,35 +71,37 @@
 <article class="about-main">
 	
 	<div class="about-card">
-    <img src="/~adona/images/headshot.jpg" alt="A headshot of Adrián">
-    <div class="grid-bullet-list">
-        <span class="emoji bullet">✉</span>
-        <a href="mailto:Adrian.Dona@ed.ac.uk">Adrian.Dona@ed.ac.uk</a>
+	<img src="/~adona/images/headshot.jpg" alt="A headshot of Adrián">
+	<div class="grid-bullet-list">
+		<span>
+			<svg class="icon"><use href="/images/sprite.svg#envelope"></use></svg>
+			<span class="email">Ad<span>vert</span>rian.Do<span>omsday</span>na@prot<span>einshake</span>on.me</span>
+		</span>
 
-        <i class="fa-brands fa-github bullet" aria-hidden="true"></i>
-        <a href="https://github.com/AdrianDoM">AdrianDoM</a>
-    </div>
+		<a href="https://github.com/AdrianDoM">
+			<svg class="icon"><use href="/images/sprite.svg#github"></use></svg>
+			AdrianDoM
+		</a>
+	</div>
 </div>
+
 	<div class="about-text">
 		<p>I used to be a PhD student at the University of Edinburgh, under the supervision of <a href="https://webhomes.maths.ed.ac.uk/~tl/">Tom Leinster</a>. Now, I am looking for a job (either in industry or academia). I am interested in category theory and its ability to clarify relationships in many areas of mathematics.</p>
 <p>The work I have done so far can be organised into three groups: monad theory, especially codensity and pushforward monads; enriched category theory (Cauchy dense functors); and magnitude homology, which is a homology theory for enriched categories, and in particular for metric spaces.</p>
-<h4>News!</h4>
+<h3 class="accent2">News!</h3>
 <ul>
-<li>I've finished my thesis. Available on this website soon!</li>
-<li><a href="/~adona/files/CT25_slides.pdf">Slides</a> for my QTCat 2026 talk.</li>
+<li>I've finished my thesis! Available in the <a href="/~adona/research">research</a> section.</li>
+<li><a href="/~adona/files/QTCat_slides.pdf">Slides</a> for my QTCat 2026 talk.</li>
 </ul>
 
 	</div>
 </article>
 </main>
 		<footer>
-    <span class="timestamp">Last updated on 7 Sept 2026</span>
-    <script src="/~adona/scripts/theme-switch.js" type="text/javascript"></script>
-<div class="theme-switch">
-    <button class="light-switch" onclick="switchTheme('light');"><i class="fa-solid fa-sun"></i></button>
-    <button class="dark-switch" onclick="switchTheme('dark');"><i class="fa-solid fa-moon"></i></button>
-</div>
-<script>switchTheme(localStorage.getItem("theme"));</script>
-  </footer>
+	<span class="timestamp">Last updated on 19 Sept 2026</span>
+	<a href="#top" class="tag"><svg class="icon" style="rotate: 180deg;"><use href="/images/sprite.svg#down-button"></use></svg>Back to top</a>
+	
+</footer>
+
 	</body>
 </html>

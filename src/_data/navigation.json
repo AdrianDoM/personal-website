@@ -9,12 +9,16 @@
 			"url": "/research/"
 		},
 		{
+			"text": "Talks",
+			"url": "/talks/"
+		},
+		{
 			"text": "Teaching",
 			"url": "/teaching/"
 		},
 		{
-			"text": "Category theory seminar",
-			"url": "/seminar/"
+			"text": "Misc",
+			"url": "/misc/"
 		}
 	]
 }
