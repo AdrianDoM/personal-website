@@ -314,6 +314,21 @@ strong {
 	--icon-stroke-width: 3;
 }
 
+figure {
+	width: 100%;
+	display: grid;
+	gap: 8px;
+	justify-items: center;
+	margin-block: 1rem;
+	margin-inline: auto;
+
+	> figcaption {
+		font-size: var(--small-font-size);
+		font-weight: var(--thin-font-weight);
+		color: var(--main-soft2);
+	}
+}
+
 article {
 	margin-bottom: 2em;
 }
