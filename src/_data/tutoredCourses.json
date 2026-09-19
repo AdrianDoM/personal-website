@@ -1,0 +1,50 @@
+[
+	 {
+			"name": "Introduction to Mathematical Analysis",
+			"years": ["2025-26 Sem 2"]
+	 },
+	 {
+			"name": "Fundamentals of Pure Mathematics",
+			"years": ["2025-26 Sem 2", "2023-24 Sem 2", "2022-23 Sem 2"]
+	 },
+	 {
+			"name": "Introduction to Mathematics at University",
+			"years": ["2025-26 Sem 1"]
+	 },
+	 {
+			"name": "Proofs and Problem Solving",
+			"years": ["2024-25 Sem 2", "2023-24 Sem 1"]
+	 },
+	 {
+			"name": "Advanced Mathematical Economics",
+			"years": ["2024-25 Sem 1"]
+	 },
+	 {
+			"name": "Axiomatic Set Theory",
+			"years": ["2024-25 Sem 1"]
+	 },
+	 {
+			"name": "Group Theory",
+			"years": ["2024-25 Sem 1"]
+	 },
+	 {
+			"name": "Introduction to Number Theory",
+			"years": ["2023-24 Sem 2"]
+	 },
+	 {
+			"name": "Category Theory",
+			"years": ["2023-24 Sem 1"]
+	 },
+	 {
+			"name": "Combinatorics and Graph Theory",
+			"years": ["2023-24 Sem 1"]
+	 },
+	 {
+			"name": "Calculus and its Applications",
+			"years": ["2022-23 Sem 2"]
+	 },
+	 {
+			"name": "Introduction to Algorithms and Data Structures",
+			"years": ["2020-21 Sems 1 and 2"]
+	 }
+]

@@ -1,0 +1,128 @@
+{# The `call` argument is the contents of the summary #}
+{# The details content is given as `cardContent` #}
+{% macro detailsCard(cardContent, groupName='') %}
+<details class="details-card" {%- if groupName.length != 0 -%} name="{{ groupName }}" {%- endif -%}>
+	<summary>
+		{{- caller() -}}
+		<svg class="details-arrow"><use href="/images/sprite.svg#down-button" /></svg>
+	</summary>
+	{{ cardContent | safe }}
+</details>
+{% endmacro %}
+
+{# The `call` argument is the subtitle #}
+{% macro compactTitleSubtitle(title) %}
+	<div class="compact-title-subtitle">
+		<h3>{{ title }}</h3>
+		{{ caller() }}
+	</div>
+{% endmacro %}
+
+{# The argument t should have { text, iconUrl, color, url='' } #}
+{% macro tag(text, iconUrl, color, url='') %}
+{%- if url -%}
+<a class="tag {{ color }}-tag" href="{{ url }}">
+	<svg class="icon"><use href="{{ iconUrl }}" /></svg>
+	{{- text -}}
+</a>
+{%- else -%}
+<span class="tag {{ color }}-tag">
+	<svg class="icon"><use href="{{ iconUrl }}" /></svg>
+	{{- text -}}
+</span>
+{%- endif -%}
+{% endmacro %}
+
+{# The `call` argument is the content #}
+{% macro contentWithTags(tags) %}
+	<div class="content-with-tags">
+		{{- caller() -}}
+		{%- if tags.length != 0 -%}
+		<div>
+			{%- for t in tags -%}
+			{{- tag(t.text, t.iconUrl, t.color, t.url) -}}
+			{%- endfor -%}
+		</div>
+		{%- endif -%}
+	</div>
+{% endmacro %}
+
+{% macro articleCard(article, groupName='') %}
+{%- call detailsCard(article.content, groupName) -%}
+	{%- set tags = [] -%}
+	{%- if article.data.linkType == 'journal' -%}
+		{%- set tags = [{ 
+			text: "journal",
+			iconUrl: "/images/sprite.svg#books",
+			color: "blue",
+			url: article.data.link
+		}] -%}
+	{%- elif article.data.linkType == 'arxiv' -%}
+		{%- set tags = [{ 
+			text: "arXiv",
+			iconUrl: "/images/sprite.svg#page",
+			color: "red",
+			url: article.data.link
+		}] -%}
+	{%- elif article.data.linkType == 'pdf' -%}
+		{%- set tags = [{ 
+			text: "pdf",
+			iconUrl: "/images/sprite.svg#page",
+			color: "purple",
+			url: article.data.link
+		}] -%}
+	{%- endif -%}
+	{%- call contentWithTags(tags) -%}
+		{%- call compactTitleSubtitle(article.data.title) -%}
+			<p>
+				{%- if article.data.collaborators -%}
+				<span class="article-collaborators">with 
+				{% for collaborator in article.data.collaborators -%}
+					{%- if not loop.first and not loop.last -%}
+						, 
+					{% elif not loop.first and loop.last %}
+						and
+					{% endif -%}
+					{%- if collaborator.link -%}
+						<a href="{{ collaborator.link }}">{{ collaborator.name }}</a>
+					{%- else -%}
+						{{ collaborator.name }}
+					{%- endif -%}
+				{%- endfor -%}
+				</span> · 
+			{% endif-%}
+			<span class="article-journal">{{ article.data.journal }}</span>
+			·
+			<span class="article-year">{{ article.date.getFullYear() }}</span>
+			</p>
+		{%- endcall -%}
+	{%- endcall -%}
+{%- endcall -%}
+{% endmacro %}
+
+{% macro talkCard(talk) %}
+  {%- set tags = [] -%}
+	{%- if talk.data.file -%}
+	{%- set tags = [{
+		text: "slides",
+		iconUrl: "/images/sprite.svg#film-frames",
+		color: "blue",
+		url: talk.data.file
+	}] -%}
+	{%- endif -%}
+	{%- call contentWithTags(tags) -%}
+		{%- call compactTitleSubtitle(talk.data.title) -%}
+    <p>
+      <time datetime="{{- talk.date -}}">
+        {{- talk.date | formatDate("year") -}}
+      </time>
+       · 
+      {% if talk.data.eventLink-%}
+      <a class="event-name" href="{{ talk.data.eventLink }}">{{ talk.data.event }}</a>
+      {%-else-%}
+      <span class="event-name">{{ talk.data.event }}</span>
+      {%-endif %}
+    </p>
+		{%- endcall -%}
+	{%- endcall %}
+{% endmacro %}
