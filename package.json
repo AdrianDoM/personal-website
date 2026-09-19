@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "start": "npx eleventy --serve",
-    "production": "NODE_ENV=production npx eleventy --pathprefix=~adona --output=./prod/"
+    "production": "NODE_ENV=production npx eleventy --output=./prod/"
   },
   "keywords": [],
   "author": "",
