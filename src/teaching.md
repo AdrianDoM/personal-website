@@ -33,7 +33,7 @@ date: Last Modified
     <td>2025 Summer</td>
 </tr>
 <tr>
-    <td>Co-organiser and tutor of <a href="https://glams-lean-2024.github.io/">GlaMS course on Lean</a></td>
+    <td>Co-organiser and tutor of a <a href="https://glams-lean-2024.github.io/">GlaMS course on Lean</a></td>
     <td>2023-24 Sem 2</td>
 </tr>
 <tr>
