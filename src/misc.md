@@ -32,7 +32,6 @@ The old seminar website can be found [here](/ects/).
     - [Nunjucks](https://mozilla.github.io/nunjucks/),
     - CSS,
     - the Braille Institute's [Atkinson Hyperlegible Next](https://www.brailleinstitute.org/freefont/) font,
-    - some emojis from [OpenMoji](https://openmoji.org/),
-    - the help of an overly complicated biocomputer I carry around inside my skull at all times.
+    - some emojis from [OpenMoji](https://openmoji.org/).
 
 </article>
